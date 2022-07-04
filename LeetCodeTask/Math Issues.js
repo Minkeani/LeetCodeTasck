@@ -7,18 +7,14 @@
 // Math.floor()
 
 
-Math.floor = function(n) {
-  return ~~n;
+Math.round = function(number) {
+  return (number - parseInt(number) >= 0.5) ? parseInt(number) + 1 : parseInt(number) ;
 };
 
-Math.frac = function(n){
-  return n - Math.floor(n);
+Math.ceil = function(number) {
+  return (parseInt(number) === number) ? number : parseInt(number) + 1;
 };
 
-Math.round = function(n) {
-  return Math.floor(n) + (Math.frac(n) >= 0.5)
-};
-
-Math.ceil = function(n) {
-  return Math.floor(n) + !!(Math.frac(n))
+Math.floor = function(number) {
+  return parseInt(number);
 };
